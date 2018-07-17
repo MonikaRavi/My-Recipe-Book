@@ -13,6 +13,9 @@
         <span class="help-block text-warning" *ngIf="!password.valid && password.touched"> Password should be atleast 6 characters long </span>
       </div>
       <button class="btn btn-primary" type="submit">Sign Up</button>
+      <div class="text-warning">
+        {{ this.authService.errorMessage }}
+      </div>
       <hr>
       <div>Please make sure you "Delete User" before logging out!!!</div>
     </form>

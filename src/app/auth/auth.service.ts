@@ -9,12 +9,16 @@ export class AuthService {
 
     token: string;
 
+    errorMessage: string;
+
     constructor(private router: Router){
         
         
     }
 
     signUpUser(email: string, password: string) {
+
+       
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(
@@ -23,13 +27,19 @@ export class AuthService {
                 }
             )
             .catch(
-                error => console.log(error)
+                error => {
+
+                    this.errorMessage = error.message;
+                }
             )
 
     }
 
 
     signInUser(email: string, password: string) {
+
+        
+
         firebase.auth().signInWithEmailAndPassword(email, password)  // waits for a token to get retrieved from server
             .then(
                 response => {
@@ -44,7 +54,9 @@ export class AuthService {
                 }
             )
             .catch(
-                error => console.log(error)
+                error => {
+                    this.errorMessage = error.message;
+                }
             );
     }
 

@@ -13,8 +13,8 @@
         <span class="help-block text-warning" *ngIf="!password.valid && password.touched"> Password should be atleast 6 characters long </span>
       </div>
       <button class="btn btn-primary" type="submit">Sign In</button>
-      <div *ngIf="!authService.isAuthenticated() && logInTry && authenticated" style="color: red">
-        Email and password doesn't match! Please try again or Register to continue..
+      <div class="text-warning">
+        {{ this.authService.errorMessage }}
       </div>
      
     </form>

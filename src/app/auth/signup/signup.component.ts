@@ -12,6 +12,9 @@ export class SignupComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+
+    this.authService.errorMessage='';
+
   }
 
 
@@ -20,6 +23,7 @@ export class SignupComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 this.authService.signUpUser(email,password);
+
 
 
   }
