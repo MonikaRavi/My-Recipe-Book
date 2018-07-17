@@ -9,6 +9,22 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
+import { DropDownDirective } from './shared/dropdown.directive'
+
+import { RecipeService } from './recipes/recipe.service';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { DataStorageService } from './shared/data-storage.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component' ;
+import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard.service';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +35,23 @@ import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/sh
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingListEditComponent
+    ShoppingListEditComponent,
+    DropDownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
+    
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingListService, DataStorageService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

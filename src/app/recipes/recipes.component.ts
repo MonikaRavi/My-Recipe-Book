@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RecipeService } from './recipe.service';
+
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
+
+
+
   constructor() { }
 
   ngOnInit() {
+
+   
+
   }
 
 }

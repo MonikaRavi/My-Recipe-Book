@@ -1,0 +1,7 @@
+input.ng-invalid.ng-touched{     /* input enables formatting only the input fields and not entire form ; ng-touched formats only when the field is touched */
+
+    border: 1px solid red;
+  
+  }
+
+  
