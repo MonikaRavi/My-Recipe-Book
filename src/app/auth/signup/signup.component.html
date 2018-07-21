@@ -12,9 +12,9 @@
         <input type="password" name="password" id="password" ngModel class="form-control" required minlength="6" #password="ngModel">
         <span class="help-block text-warning" *ngIf="!password.valid && password.touched"> Password should be atleast 6 characters long </span>
       </div>
-      <button class="btn btn-primary" type="submit">Sign Up</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign Up</button>
       <div class="text-warning">
-        {{ this.authService.errorMessage }}
+        {{ error }}
       </div>
       <hr>
       <div>Please make sure you "Delete User" before logging out!!!</div>

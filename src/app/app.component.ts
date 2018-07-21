@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  loadedFeature = 'recipe';
+
 
   ngOnInit(){    
 
@@ -22,10 +22,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  onNavigate(featureData: string) {
 
- this.loadedFeature = featureData;
-
-  }
 
 }

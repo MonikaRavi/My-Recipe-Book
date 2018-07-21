@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { auth } from 'firebase';
 
 @Component({
   selector: 'app-signin',
@@ -9,9 +10,9 @@ import { AuthService } from '../auth.service';
 })
 export class SigninComponent implements OnInit {
 
-  logInTry = false;
 
-  authenticated = false;
+
+  error = '';
 
   constructor(private authService: AuthService) { }
 
@@ -26,17 +27,12 @@ export class SigninComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 
-    this.authService.signInUser(email,password);
+     this.authService.signInUser(email,password);
 
     setTimeout(() => {
-      this.authenticated = true;
-    }, 1500);
-
-    this.logInTry = true;
-
-  }
-
-  
+      this.error = this.authService.getError();
+        }, 1000); 
 
 
+      }
 }

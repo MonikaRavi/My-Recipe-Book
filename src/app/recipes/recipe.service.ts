@@ -1,16 +1,13 @@
 import { Recipe } from "./recipe.model";
-import {  Injectable } from "@angular/core";
 import { Ingredient } from "../shared/ingredient.model";
-import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Subject } from "rxjs";
 
-@Injectable()
 
 export class RecipeService {
 
     recipesChanged = new Subject<Recipe[]>(); // to track changes in the Recipe array - addition or update
 
-    constructor(private shoppingService: ShoppingListService) {
+    constructor() {
 
 
     }
@@ -55,12 +52,7 @@ export class RecipeService {
 
     }
 
-    addIngredientstoShoppingList(ingredients: Ingredient[]){
-
-        this.shoppingService.addIngredients(ingredients);
-
-
-    }
+ 
 
     getRecipe(index: number) {
 

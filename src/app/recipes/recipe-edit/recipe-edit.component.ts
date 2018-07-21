@@ -81,6 +81,11 @@ export class RecipeEditComponent implements OnInit {
 this.router.navigate(['../'], {relativeTo: this.route}) // takes us one step back 
   }
 
+  
+  getControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
   private initForm() {  // form definition / configuration 
 
     let recipeName = '';
@@ -111,5 +116,7 @@ this.router.navigate(['../'], {relativeTo: this.route}) // takes us one step bac
       'ingredients': recipeIngredients
     });
   }
+
+
 
 }
