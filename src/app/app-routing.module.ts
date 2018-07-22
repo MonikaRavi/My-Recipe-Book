@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 
 @NgModule({   // Ng Module takes javascript as object
 
-    imports: [RouterModule.forRoot(appRoutes,{preloadingStrategy: PreloadAllModules, useHash: true})], // preloads modules which are loaded lazily
+    imports: [RouterModule.forRoot(appRoutes,{preloadingStrategy: PreloadAllModules})], // preloads modules which are loaded lazily
     exports: [RouterModule]
 
 })
