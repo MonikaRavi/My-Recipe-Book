@@ -12,16 +12,22 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/browser` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## AWS Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Copy the contents of dist/browser into bucket
 
-## Running end-to-end tests
+## Firebase Deployment
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+runs from `dist/browser`
 
-## Further help
+## Universal Rendering 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To host in any remote server than can run node.js, like Google Cloud Platform
+
+Follow steps in `https://github.com/angular/angular-cli/wiki/stories-universal-rendering`
+
+Create a new repo with contents of dist folder and configuring to run server.js file. 
+
+Repo for deploying this project in Google Cloud Platform is `https://github.com/MonikaRavi/MyRecipeBook-googlehost`
